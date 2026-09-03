@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>State Aggregation Simulator</title>
+
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" href="/static/favicon.ico">
+</head>
+
+<body>
+    <div class="app-container">
+
+        <header class="top-header">
+
+            <div class="brand">
+                <img src="/static/images/skao-logo-unofficial.png" alt="SKAO">
+
+                <div class="brand-title">
+                    <h1>Dish LMC State & Modes Calculator</h1>
+                    <span>State Management & Transition Analysis</span>
+                </div>
+            </div>
+
+            <div class="header-content">
+                <nav class="header-nav">
+                    <a href="/" class="header-link">
+                        Simulated Calculator
+                    </a>
+
+                    <a href="/reverse" class="header-link">
+                        Reverse Calculator
+                    </a>
+
+                    <a href="/transition" class="header-link">
+                        Mode Transition
+                    </a>
+                </nav>
+            </div>
+
+        </header>
+
+        <main class="main-layout">
+
+            <!-- LEFT -->
+            <section class="inputs-panel">
+
+                <h2>INPUTS</h2>
+
+                <div class="toggle-group">
+
+                    <label class="toggle-row">
+                        <span>Ignore SPF</span>
+                        <input type="checkbox" id="ignore-spf">
+                    </label>
+
+                    <label class="toggle-row">
+                        <span>Ignore SPFRX</span>
+                        <input type="checkbox" id="ignore-spfrx">
+                    </label>
+
+                </div>
+
+                <div class="field-group">
+
+                    <h2>Attribute</h2>
+
+                    <select id="attribute-select">
+                        <option value="power_state">
+                            Power State
+                        </option>
+
+                        <option value="capability_state">
+                            Capability State
+                        </option>
+
+                        <option value="health_state">
+                            Health State
+                        </option>
+
+                        <option value="dish_mode">
+                            Dish Mode
+                        </option>
+                    </select>
+
+                </div>
+
+                <div class="field-group">
+
+                    <h2>DISH STRUCTURE / DISH MANAGER</h2>
+
+                    <select id="ds-select"></select>
+
+                    <div id="ds-capability-container" style="display: none;">
+
+                        <label for="ds-select-1">
+                            DS Operating Mode
+                        </label>
+                        <select id="ds-select-1"></select>
+
+                        <label for="ds-select-2">
+                            DS Indexer Position
+                        </label>
+                        <select id="ds-select-2"></select>
+
+                        <label for="ds-select-3">
+                            Dish Manager Dish Mode
+                        </label>
+                        <select id="ds-select-3"></select>
+
+                    </div>
+
+                    <div id="ds-dish-mode-container" style="display: none;">
+
+                        <label for="ds-select-4">
+                            DS Operating Mode
+                        </label>
+                        <select id="ds-select-4"></select>
+
+                        <label for="ds-select-5">
+                            DS Indexer Position
+                        </label>
+                        <select id="ds-select-5"></select>
+
+                        <label for="ds-select-6">
+                            DS Power State
+                        </label>
+                        <select id="ds-select-6"></select>
+
+                    </div>
+
+                </div>
+
+                <div class="field-group" id="spf-group">
+
+                    <h2>SPF</h2>
+                    <select id="spf-select"></select>
+
+                </div>
+
+                <div class="field-group" id="spfrx-group">
+
+                    <h2>SPFRx</h2>
+                    <select id="spfrx-select"></select>
+
+                </div>
+
+                <button class="calculate-btn">
+                    CALCULATE
+                </button>
+
+            </section>
+
+            <!-- RIGHT -->
+            <section class="results-panel">
+
+                <h2>RESULTS</h2>
+
+                <div class="result-item">
+                    <strong>AGGREGATED STATE:</strong>
+                    <span></span>
+                </div>
+
+                <div class="result-item">
+                    <strong>MATCHED RULE:</strong>
+                    <span></span>
+                </div>
+
+                <div class="result-block">
+                    <strong>REASON:</strong>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+
+</html>

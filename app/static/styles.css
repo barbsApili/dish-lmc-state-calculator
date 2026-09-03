@@ -1,0 +1,746 @@
+/* =========================================================
+   BASE
+   ========================================================= */
+
+body {
+    margin: 0;
+    font-family: "Noto Sans", Verdana, Arial, sans-serif;
+
+    background: linear-gradient(
+        135deg,
+        #07111f 0%,
+        #0b1830 55%,
+        #11152b 100%
+    );
+
+    color: #f5f5f5;
+}
+
+
+/* =========================================================
+   MAIN APP
+   ========================================================= */
+
+.app-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 32px;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.top-header {
+    border-bottom: 2px solid #263653;
+    padding-bottom: 15px;
+    margin-bottom: 24px;
+}
+
+.header-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 6px;
+    border-radius: 14px;
+
+    background: rgba(8, 20, 40, 0.9);
+    border: 1px solid #263653;
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04),
+        0 6px 18px rgba(0, 0, 0, 0.25);
+
+    backdrop-filter: blur(10px);
+}
+
+.header-link {
+    text-decoration: none;
+    color: #b8c3d4;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    padding: 10px 18px;
+    border-radius: 10px;
+
+    background: transparent;
+    outline: none;
+
+    transition:
+        color 0.2s ease,
+        background 0.2s ease,
+        transform 0.2s ease;
+}
+
+.header-link:hover {
+    background: rgba(207, 43, 139, 0.12);
+    color: #ffffff;
+    transform: translateY(-1px);
+}
+
+.header-link.active {
+    background: linear-gradient(
+        135deg,
+        #142541,
+        #1b2e50
+    );
+
+    color: #ffffff;
+
+    border: 1px solid rgba(207, 43, 139, 0.45);
+
+    box-shadow:
+        0 4px 14px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+
+/* =========================================================
+   MAIN LAYOUT
+   ========================================================= */
+
+.main-layout {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+}
+
+
+/* =========================================================
+   PANELS
+   ========================================================= */
+
+.inputs-panel,
+.results-panel {
+    background: rgba(13, 28, 52, 0.92);
+
+    border: 1px solid #263653;
+    border-radius: 18px;
+
+    padding: 28px;
+    min-height: 560px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+
+    backdrop-filter: blur(8px);
+}
+
+.inputs-panel {
+    width: 420px;
+}
+
+.results-panel {
+    flex: 1;
+}
+
+
+/* =========================================================
+   SECTION TITLES
+   ========================================================= */
+
+h1 {
+    margin: 0;
+
+    font-size: 2rem;
+    font-weight: 700;
+
+    letter-spacing: -0.02em;
+}
+
+h2 {
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+
+    color: #e4e9f2;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    margin-bottom: 18px;
+    padding-left: 12px;
+
+    border-left: 3px solid #e83e9f;
+}
+
+
+/* =========================================================
+   FORM GROUPS
+   ========================================================= */
+
+.field-group {
+    margin-bottom: 28px;
+}
+
+.field-group:not(:last-child) {
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+
+/* =========================================================
+   SELECT DROPDOWNS
+   ========================================================= */
+
+select {
+    width: 100%;
+
+    padding: 12px 14px;
+
+    border: 1px solid #354866;
+    border-radius: 10px;
+
+    background-color: #09182d;
+    color: #ffffff;
+
+    font-family: "Noto Sans", Verdana, Arial, sans-serif;
+    font-size: 14px;
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+select:hover {
+    border-color: #536987;
+}
+
+select:focus {
+    outline: none;
+
+    border-color: #d12b91;
+
+    box-shadow:
+        0 0 0 3px rgba(209, 43, 145, 0.18);
+}
+
+
+/* =========================================================
+   TOGGLES
+   ========================================================= */
+
+.toggle-group {
+    margin-bottom: 25px;
+}
+
+.toggle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 15px;
+}
+
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.mode-btn,
+.advise-btn,
+.calculate-btn {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #a91f78,
+        #d12b91
+    );
+
+    color: #ffffff;
+
+    font-family: "Noto Sans", Verdana, Arial, sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+.mode-btn:hover,
+.advise-btn:hover,
+.calculate-btn:hover {
+    transform: translateY(-1px);
+
+    background: linear-gradient(
+        135deg,
+        #bd2487,
+        #df3b9d
+    );
+
+    box-shadow:
+        0 10px 22px rgba(209, 43, 145, 0.28);
+}
+
+.mode-btn:active,
+.advise-btn:active,
+.calculate-btn:active {
+    transform: translateY(0);
+}
+
+
+/* =========================================================
+   RESULT BLOCKS
+   ========================================================= */
+
+.all-devices,
+.spf-ignored,
+.spfrx-ignored,
+.ds-only,
+.advice-result-item,
+.result-item,
+.result-block {
+    background-color: #09182d;
+
+    border: 1px solid #263653;
+    border-radius: 12px;
+
+    padding: 16px;
+    margin-bottom: 16px;
+}
+
+.all-devices strong,
+.spf-ignored strong,
+.spfrx-ignored strong,
+.ds-only strong,
+.advice-result-item strong,
+.result-item strong,
+.result-block strong {
+    color: #e05aa9;
+}
+
+
+/* =========================================================
+   CONDITIONAL INPUT GROUPS
+   ========================================================= */
+
+#capability-fields {
+    display: none;
+}
+
+#ds-capability-container,
+#ds-dish-mode-container {
+    margin-top: 18px;
+    padding: 18px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+
+    background: linear-gradient(
+        135deg,
+        rgba(16, 34, 62, 0.9),
+        rgba(10, 24, 45, 0.95)
+    );
+
+    border: 1px solid #304765;
+    border-left: 3px solid #e83e9f;
+    border-radius: 12px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.03);
+}
+
+
+/* =========================================================
+   DS FIELD LABELS
+   ========================================================= */
+
+#ds-capability-container label,
+#ds-dish-mode-container label {
+    display: block;
+
+    margin-top: 4px;
+    margin-bottom: 7px;
+
+    color: #e4e9f2;
+
+    font-size: 13px !important;
+    font-weight: 600;
+
+    letter-spacing: 0.02em;
+}
+
+
+/* =========================================================
+   DS DROPDOWNS
+   ========================================================= */
+
+#ds-capability-container select,
+#ds-dish-mode-container select {
+    width: 100%;
+
+    margin-bottom: 18px;
+
+    background: linear-gradient(
+        135deg,
+        #0b1c35,
+        #101f3a
+    );
+
+    border: 1px solid #405578;
+    border-left: 3px solid #536987;
+    border-radius: 10px;
+
+    color: #ffffff;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.03),
+        0 4px 12px rgba(0, 0, 0, 0.15);
+
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease,
+        transform 0.2s ease;
+}
+
+#ds-capability-container select:last-child,
+#ds-dish-mode-container select:last-child {
+    margin-bottom: 0;
+}
+
+#ds-capability-container select:hover,
+#ds-dish-mode-container select:hover {
+    border-color: #667b9d;
+    border-left-color: #e83e9f;
+}
+
+#ds-capability-container select:focus,
+#ds-dish-mode-container select:focus {
+    outline: none;
+
+    border-color: #e83e9f;
+    border-left-color: #e83e9f;
+
+    box-shadow:
+        0 0 0 3px rgba(232, 62, 159, 0.14),
+        0 6px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+/* =========================================================
+   TRANSITION PATH SECTION
+   ========================================================= */
+
+#transition-path-section {
+    display: none;
+    margin-bottom: 28px;
+}
+
+
+/* =========================================================
+   DROPDOWN HEADER
+   ========================================================= */
+
+.dropdown-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 10px 14px;
+    padding-left: 12px;
+
+    margin-bottom: 18px;
+
+    font-size: 0.95rem;
+    letter-spacing: 0.12em;
+
+    color: #e4e9f2;
+    font-weight: 700;
+
+    text-transform: uppercase;
+
+    background: rgba(255, 255, 255, 0.02);
+
+    border-left: 3px solid #e83e9f;
+    border-radius: 0 10px 10px 0;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.dropdown-header:hover {
+    background: rgba(207, 43, 139, 0.12);
+    color: #ffffff;
+}
+
+
+/* =========================================================
+   DROPDOWN ARROW
+   ========================================================= */
+
+.dropdown-arrow {
+    font-size: 10px;
+    color: #b8c3d4;
+
+    transition:
+        transform 0.2s ease,
+        color 0.2s ease;
+}
+
+.dropdown-header:hover .dropdown-arrow {
+    color: #e83e9f;
+}
+
+.dropdown-header.active .dropdown-arrow {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   DROPDOWN CONTENT
+   ========================================================= */
+
+.dropdown-content {
+    display: none;
+
+    background-color: #09182d;
+
+    border: 1px solid #263653;
+    border-radius: 12px;
+
+    padding: 16px;
+
+    margin-top: -6px;
+    margin-bottom: 16px;
+
+    box-shadow:
+        inset 0 1px 2px rgba(255, 255, 255, 0.03);
+}
+
+.dropdown-content.show {
+    display: block;
+}
+
+
+/* =========================================================
+   MODE TRANSITION RESULTS
+   ========================================================= */
+
+.allowed-modes strong,
+.possible-modes strong {
+    color: #e83e9f;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   ALTERNATIVE ROUTES
+   ========================================================= */
+
+.alt-routes {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+
+/* =========================================================
+   ROUTE CARD
+   ========================================================= */
+
+.route-option {
+    position: relative;
+
+    padding: 24px;
+
+    background: linear-gradient(
+        145deg,
+        #102541,
+        #0b1b31
+    );
+
+    border: 1px solid #304765;
+    border-radius: 14px;
+
+    box-shadow:
+        0 8px 20px rgba(0, 0, 0, 0.20),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+
+    overflow: hidden;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.route-option:hover {
+    transform: translateY(-2px);
+
+    border-color: rgba(232, 62, 159, 0.45);
+
+    box-shadow:
+        0 14px 28px rgba(0, 0, 0, 0.25),
+        0 0 20px rgba(232, 62, 159, 0.04);
+}
+
+
+/* Pink accent */
+
+.route-option::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    top: 0;
+    bottom: 0;
+
+    width: 3px;
+
+    background: #e83e9f;
+}
+
+
+/* =========================================================
+   ROUTE OPTION LABEL
+   ========================================================= */
+
+.route-option-title {
+    display: inline-block;
+
+    padding: 6px 10px;
+    margin-bottom: 20px;
+
+    border-radius: 6px;
+
+    background: rgba(232, 62, 159, 0.10);
+    border: 1px solid rgba(232, 62, 159, 0.25);
+
+    color: #e83e9f;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 0.14em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   COMPLETE ROUTE
+   ========================================================= */
+
+.route-path {
+    margin-bottom: 24px;
+
+    color: #ffffff;
+
+    font-size: 18px;
+    font-weight: 800;
+
+    letter-spacing: 0.035em;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   ROUTE STEPS
+   ========================================================= */
+
+.route-step {
+    display: flex;
+    align-items: flex-start;
+
+    gap: 14px;
+
+    padding: 14px 0;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+
+/* =========================================================
+   STEP NUMBER
+   ========================================================= */
+
+.step-number {
+    flex-shrink: 0;
+
+    width: 28px;
+    height: 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: rgba(232, 62, 159, 0.10);
+    border: 1px solid rgba(232, 62, 159, 0.30);
+
+    color: #e83e9f;
+
+    font-size: 10px;
+    font-weight: 800;
+}
+
+
+/* =========================================================
+   STEP CONTENT
+   ========================================================= */
+
+.step-content {
+    flex: 1;
+    min-width: 0;
+}
+
+
+/* =========================================================
+   STEP TRANSITION
+   ========================================================= */
+
+.step-path {
+    margin-bottom: 6px;
+
+    color: #ffffff;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   STEP CONDITION
+   ========================================================= */
+
+.step-condition {
+    display: inline-block;
+
+    padding: 6px 10px;
+
+    border-radius: 6px;
+
+    background: rgba(255, 255, 255, 0.035);
+
+    color: #aebbd0;
+
+    font-size: 12px;
+    line-height: 1.5;
+}

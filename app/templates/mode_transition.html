@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>State Aggregation Simulator</title>
+
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" href="/static/favicon.ico">
+</head>
+
+<body>
+    <div class="app-container">
+
+        <header class="top-header">
+
+            <div class="brand">
+                <img src="/static/images/skao-logo-unofficial.png" alt="SKAO">
+
+                <div class="brand-title">
+                    <h1>Dish LMC State & Modes Calculator</h1>
+                    <span>State Management & Transition Analysis</span>
+                </div>
+            </div>
+
+            <div class="header-content">
+                <nav class="header-nav">
+                    <a href="/" class="header-link">
+                        Simulated Calculator
+                    </a>
+
+                    <a href="/reverse" class="header-link">
+                        Reverse Calculator
+                    </a>
+
+                    <a href="/transition" class="header-link">
+                        Mode Transitions
+                    </a>
+                </nav>
+            </div>
+
+        </header>
+
+        <main class="main-layout">
+
+            <!-- LEFT -->
+            <section class="inputs-panel">
+
+                <div class="field-group">
+
+                    <h2>Current Dish Mode</h2>
+
+                    <select id="attribute-select-mode">
+
+                        <option value="UNKNOWN">
+                            UNKNOWN
+                        </option>
+
+                        <option value="STARTUP">
+                            START UP
+                        </option>
+
+                        <option value="STOW">
+                            STOW
+                        </option>
+
+                        <option value="CONFIG">
+                            CONFIG
+                        </option>
+
+                        <option value="STANDBY_LP">
+                            STANDBY LOW POWER
+                        </option>
+
+                        <option value="STANDBY_FP">
+                            STANDBY FULL POWER
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="field-group">
+
+                    <h2>Targeted Mode</h2>
+
+                    <select id="ds-select-mode">
+
+                        <option value="UNKNOWN">
+                            UNKNOWN
+                        </option>
+
+                        <option value="STARTUP">
+                            START UP
+                        </option>
+
+                        <option value="STOW">
+                            STOW
+                        </option>
+
+                        <option value="CONFIG">
+                            CONFIG
+                        </option>
+
+                        <option value="STANDBY_LP">
+                            STANDBY LOW POWER
+                        </option>
+
+                        <option value="STANDBY_FP">
+                            STANDBY FULL POWER
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <button class="mode-btn">
+                    CAN I TRANSITION TO THIS MODE?
+                </button>
+
+            </section>
+
+            <!-- RIGHT -->
+            <section class="results-panel">
+
+                <h2>TRANSITION RESULT</h2>
+
+                <div class="allowed-modes">
+                    <span></span>
+                </div>
+
+                <div id="transition-path-section">
+
+                    <h2 id="transition-toggle" class="dropdown-header">
+                        TRANSITION PATH
+                        <span class="dropdown-arrow">▼</span>
+                    </h2>
+
+                    <div id="transition-content" class="dropdown-content">
+                        <div class="alt-routes"></div>
+                    </div>
+
+                </div>
+
+                <h2>AVAILABLE TRANSITIONS</h2>
+
+                <div class="possible-modes">
+                    <span></span>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="/static/mode_transition.js" defer></script>
+
+</body>
+
+</html>

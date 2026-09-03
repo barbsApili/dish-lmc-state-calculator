@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>State Aggregation Simulator</title>
+
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="icon" href="/static/favicon.ico">
+</head>
+
+<body>
+    <div class="app-container">
+
+        <header class="top-header">
+
+            <div class="brand">
+                <img src="/static/images/skao-logo-unofficial.png" alt="SKAO">
+
+                <div class="brand-title">
+                    <h1>Dish LMC State & Modes Calculator</h1>
+                    <span>State Management & Transition Analysis</span>
+                </div>
+            </div>
+
+            <div class="header-content">
+                <nav class="header-nav">
+
+                    <a href="/" class="header-link">
+                        Simulated Calculator
+                    </a>
+
+                    <a href="/reverse" class="header-link">
+                        Reverse Calculator
+                    </a>
+
+                    <a href="/transition" class="header-link">
+                        Mode Transition
+                    </a>
+
+                </nav>
+            </div>
+
+        </header>
+
+        <main class="main-layout">
+
+            <!-- LEFT -->
+            <section class="inputs-panel">
+
+                <div class="field-group">
+
+                    <h2>Attribute</h2>
+
+                    <select id="attribute-select-reverse">
+
+                        <option value="power_state">
+                            Power State
+                        </option>
+
+                        <option value="capability_state">
+                            Capability State
+                        </option>
+
+                        <option value="health_state">
+                            Health State
+                        </option>
+
+                        <option value="dish_mode">
+                            Dish Mode
+                        </option>
+
+                    </select>
+
+                </div>
+
+                <div class="field-group">
+
+                    <h2>Value</h2>
+
+                    <select id="ds-select-reverse"></select>
+
+                </div>
+
+                <button class="advise-btn">
+                    ADVISE
+                </button>
+
+            </section>
+
+            <!-- RIGHT -->
+            <section class="results-panel">
+
+                <h2>RESULTS</h2>
+
+                <div class="all-devices">
+                    <strong>ALL DEVICES:</strong>
+                    <span></span>
+                </div>
+
+                <div class="spf-ignored">
+                    <strong>SPF IGNORED:</strong>
+                    <span></span>
+                </div>
+
+                <div class="spfrx-ignored">
+                    <strong>SPFRX IGNORED:</strong>
+                    <span></span>
+                </div>
+
+                <div class="ds-only">
+                    <strong>DS ONLY:</strong>
+                    <span></span>
+                </div>
+
+            </section>
+
+        </main>
+
+    </div>
+
+    <script src="/static/reverse.js" defer></script>
+
+</body>
+</html>

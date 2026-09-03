@@ -1,0 +1,3 @@
+Note: This code was generated from the SKAO file
+located in the transition_rules folder
+to establish the rules for this calculator.
