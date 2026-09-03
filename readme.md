@@ -26,8 +26,6 @@ Supported attributes include:
 
 SPF and SPFRX can also be ignored when required.
 
----
-
 ### Reverse Calculator
 
 Select a desired state and receive advice on the conditions required to achieve it.
@@ -38,8 +36,6 @@ The calculator provides advice for:
 - SPF ignored
 - SPFRX ignored
 - Dish Structure only
-
----
 
 ### Mode Transitions
 
@@ -54,5 +50,64 @@ The Mode Transition calculator provides:
 
 For example:
 
-```text
-STOW → STANDBY_LP → CONFIG
+    STOW → STANDBY_LP → CONFIG
+
+---
+
+## Screenshots
+
+### Aggregation Calculator
+
+![Aggregation Calculator](screenshots/aggregation-calculator.png)
+
+### Reverse Aggregation Calculator
+
+![Reverse Aggregation Calculator](screenshots/reverse-aggregation-calculator.png)
+
+### Mode Transition Calculator
+
+![Mode Transition Calculator](screenshots/mode-transition-calculator.png)
+
+---
+
+## Running the Application
+
+### 1. Create a virtual environment
+
+    python3 -m venv venv
+
+### 2. Activate the virtual environment
+
+**macOS / Linux:**
+
+    source venv/bin/activate
+
+**Windows:**
+
+    venv\Scripts\activate
+
+### 3. Install dependencies
+
+    pip install -r requirements.txt
+
+### 4. Run the application
+
+    uvicorn app.main:app --reload
+
+The application will be available at:
+
+    http://127.0.0.1:8000
+
+### Application Pages
+
+- **Simulated Calculator:** `/`
+- **Reverse Calculator:** `/reverse`
+- **Mode Transition Calculator:** `/transition`
+
+### Stop the Application
+
+Press `CTRL+C`.
+
+To deactivate the virtual environment:
+
+    deactivate
