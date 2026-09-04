@@ -1,10 +1,15 @@
+# This implementation was developed with reference to the SKAO Dish LMC
+# class, particularly its predefined state aggregation rules and processing
+# logic. The calculator is an independent implementation for analysis and
+# simulation purposes (https://gitlab.com/ska-telescope/mid-dish/ska-mid-dish-manager/-/blob/main/src/ska_mid_dish_manager/models/dish_state_transition.py?ref_type=heads).
+
 """State transition computation."""
 
 from typing import Optional
 from rule_engine.errors import (AttributeResolutionError, SymbolResolutionError)
 
 
-from app.models.enums import Band, CapabilityStates, DishMode, SPFBandInFocus, HealthState, SPFHealthState
+from app.models.enums import SPFBandInFocus, HealthState, SPFHealthState
 from app.models.transition_rules import (
     band_focus_rules_all_devices,
     band_focus_rules_spfrx_ignored,

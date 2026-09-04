@@ -1,3 +1,8 @@
+# This implementation was developed with reference to the SKAO Dish LMC
+# class, particularly its predefined state aggregation rules.
+# The calculator is an independent implementation for analysis and
+# simulation purposes 
+
 """Automatic transition rules for configuredBand."""
 
 import rule_engine

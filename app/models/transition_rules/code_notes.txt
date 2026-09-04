@@ -1,5 +1,0 @@
-Note: This code was taken from the SKAO code
-available on gitlab (open source) to establish
-the rules for this calculator. It can be replaced
-with other rules that follow the same format to
-form a new calculator.
