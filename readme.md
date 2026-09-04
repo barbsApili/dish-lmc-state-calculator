@@ -86,11 +86,7 @@ For example:
 
     venv\Scripts\activate
 
-### 3. Install dependencies
-
-    pip install -r requirements.txt
-
-### 4. Run the application
+### 3. Run the application
 
     uvicorn app.main:app --reload
 
