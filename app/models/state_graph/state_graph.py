@@ -9,29 +9,34 @@ DISH_MODE_GRAPH = {
     DishMode.UNKNOWN: [
         {
             "target": DishMode.STARTUP,
-            "condition": "Call STOW. No Power State Conditions",
+            "condition": "Call STOW. No Power State Conditions."
+            "NB: Only possible when normal operation has been restored",
         },
         {
             "target": DishMode.STOW,
-            "condition":"Call STOW. No Power State Conditions",
+            "condition":"Call STOW. No Power State Conditions"
+            "NB: Only possible when normal operation has been restored",
         },
         {
             "target": DishMode.CONFIG,
-            "condition": "Call STOW. No Power State Conditions",
+            "condition": "Call STOW. No Power State Conditions"
+            "NB: Only possible when normal operation has been restored",
         },   
         {
             "target": DishMode.STANDBY_LP,
-            "condition": "Call STOW. No Power State Conditions",
+            "condition": "Call STOW. No Power State Conditions"
+            "NB: Only possible when normal operation has been restored",
         },
         {
             "target": DishMode.STANDBY_FP,
-            "condition": "Call STOW. No Power State Conditions",
+            "condition": "Call STOW. No Power State Conditions"
+            "NB: Only possible when normal operation has been restored",
         },
         {
             "target": DishMode.SHUTDOWN,
             "condition":"Can transition to Shutdown from any mode when: (1) Unplanned interruptions"
             " to the Dish power supply( for Dish instances supplied by local UPS);"
-            "(2) Planned interruptions to the Dish power supply. No Power State restriction.",
+            "(2) Planned interruptions to the Dish power supply. No Power State restriction."
         },
     ],
 
