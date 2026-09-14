@@ -9,29 +9,33 @@ DISH_MODE_GRAPH = {
     DishMode.UNKNOWN: [
         {
             "target": DishMode.STARTUP,
-            "condition": "Can and will transition to STARTUP when normal operation has been restored.",
+            "condition": "Can transition to STARTUP when normal operation has been restored.",
         },
         {
             "target": DishMode.STOW,
-            "condition":"Can and will transition to STOW when normal operation has been restored.",
+            "condition":"Can transition to STOW when normal operation has been restored.",
         },
         {
             "target": DishMode.CONFIG,
-            "condition": "Can and will transition to CONFIG when normal operation has been restored.",
+            "condition": "Can transition to CONFIG when normal operation has been restored.",
         },   
         {
             "target": DishMode.STANDBY_LP,
-            "condition": "Can and will transition to STANDBY LP when normal operation has been restored.",
+            "condition": "Can transition to STANDBY LP when normal operation has been restored.",
         },
         {
             "target": DishMode.STANDBY_FP,
-            "condition": "Can and will transition to STANDBY_FP when normal operation has been restored.",
+            "condition": "Can transition to STANDBY_FP when normal operation has been restored.",
         },
         {
             "target": DishMode.SHUTDOWN,
             "condition":"Can transition to Shutdown from any mode when: (1) Unplanned interruptions"
             " to the Dish power supply( for Dish instances supplied by local UPS);"
             "(2) Planned interruptions to the Dish power supply. No Power State restriction."
+        },
+        {
+            "target": DishMode.UNKNOWN,
+            "condition":"Current already at prefe"
         },
     ],
 
