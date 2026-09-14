@@ -376,9 +376,6 @@ class StateTransition:
         dish_manager_component_state: Optional[dict] = None,  # type: ignore
     ) -> dict:  # type: ignore
         """Collapse multiple state dicts into one."""
-
-        print(spf_component_state)
-        print(spfrx_component_state)
         dish_manager_states = {"DS": {}}  # type: ignore
 
         for key, val in ds_component_state.items():
@@ -393,7 +390,6 @@ class StateTransition:
                 dish_manager_states["SPFRX"][key] = str(val)
 
         if spf_component_state:
-            print("did we make it here")
             dish_manager_states["SPF"] = {}
             for key, val in spf_component_state.items():
                 dish_manager_states["SPF"][key] = str(val)
