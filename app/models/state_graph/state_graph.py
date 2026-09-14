@@ -33,10 +33,6 @@ DISH_MODE_GRAPH = {
             " to the Dish power supply( for Dish instances supplied by local UPS);"
             "(2) Planned interruptions to the Dish power supply. No Power State restriction."
         },
-        {
-            "target": DishMode.UNKNOWN,
-            "condition":"Current already at prefe"
-        },
     ],
 
     DishMode.STARTUP: [
