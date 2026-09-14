@@ -95,23 +95,18 @@ class StateTransition:
 
         # Get the current healthState enum
         if ds_component_state:
-            dish_manager_states["DS"]["healthstate"] = ds_component_state.get(
-                "healthstate",
-                HealthState.UNKNOWN,
+            dish_manager_states["DS"]["healthstate"] = (
+                ds_component_state.get("healthstate") or HealthState.UNKNOWN
             )
 
         if spfrx_component_state:
             dish_manager_states["SPFRX"]["healthstate"] = (
-                spfrx_component_state.get(
-                    "healthstate",
-                    HealthState.UNKNOWN,
-                )
+                spfrx_component_state.get("healthstate") or HealthState.UNKNOWN
             )
 
         if spf_component_state:
-            dish_manager_states["SPF"]["healthstate"] = spf_component_state.get(
-                "healthstate",
-                SPFHealthState.UNKNOWN,
+            dish_manager_states["SPF"]["healthstate"] = (
+                spf_component_state.get("healthstate") or SPFHealthState.UNKNOWN
             )
 
         def normalise_health_state(value, enum_class):
@@ -128,7 +123,8 @@ class StateTransition:
 
             return enum_class(value).name
 
-        # Build the names used in the transition rules
+
+        # DS is always included
         ds_healthstate_name = normalise_health_state(
             dish_manager_states["DS"]["healthstate"],
             HealthState,
@@ -137,7 +133,8 @@ class StateTransition:
             f"HealthState.{ds_healthstate_name}"
         )
 
-        if "SPFRX" in dish_manager_states:
+        # Only normalise SPFRX if it is being used
+        if spfrx_component_state:
             spfrx_healthstate_name = normalise_health_state(
                 dish_manager_states["SPFRX"]["healthstate"],
                 HealthState,
@@ -146,7 +143,8 @@ class StateTransition:
                 f"HealthState.{spfrx_healthstate_name}"
             )
 
-        if "SPF" in dish_manager_states:
+        # Only normalise SPF if it is being used
+        if spf_component_state:
             spf_healthstate_name = normalise_health_state(
                 dish_manager_states["SPF"]["healthstate"],
                 SPFHealthState,
@@ -154,7 +152,6 @@ class StateTransition:
             dish_manager_states["SPF"]["healthstate"] = (
                 f"SPFHealthState.{spf_healthstate_name}"
             )
-
         rules_to_use = health_state_rules_ds_only
 
         if spfrx_component_state and spf_component_state:
@@ -379,6 +376,9 @@ class StateTransition:
         dish_manager_component_state: Optional[dict] = None,  # type: ignore
     ) -> dict:  # type: ignore
         """Collapse multiple state dicts into one."""
+
+        print(spf_component_state)
+        print(spfrx_component_state)
         dish_manager_states = {"DS": {}}  # type: ignore
 
         for key, val in ds_component_state.items():
@@ -393,6 +393,7 @@ class StateTransition:
                 dish_manager_states["SPFRX"][key] = str(val)
 
         if spf_component_state:
+            print("did we make it here")
             dish_manager_states["SPF"] = {}
             for key, val in spf_component_state.items():
                 dish_manager_states["SPF"][key] = str(val)

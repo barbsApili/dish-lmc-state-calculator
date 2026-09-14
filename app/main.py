@@ -184,13 +184,13 @@ async def calculate(request: Request):
 
         spf_component_state = (
             {"healthstate": spf}
-            if spf != ""
+            if spf not in ("", {}, None)
             else None
         )
 
         spfrx_component_state = (
             {"healthstate": spfrx}
-            if spfrx != ""
+            if spfrx not in ("", {}, None)
             else None
         )
 
