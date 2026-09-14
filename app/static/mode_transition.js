@@ -6,6 +6,34 @@ const currentMode = document.getElementById("attribute-select-mode");
 const targetMode = document.getElementById("ds-select-mode");
 const modeButton = document.querySelector(".mode-btn");
 
+// =========================================================
+// BLOCK LIKE ELEMENTS IN DROPDOWN
+// =========================================================
+
+function updateTargetModes() {
+    const selectedMode = currentMode.value;
+
+    Array.from(targetMode.options).forEach(option => {
+        option.hidden = option.value === selectedMode;
+    });
+
+    // If the currently selected target is now hidden,
+    // select the first available option instead.
+    if (targetMode.value === selectedMode) {
+        const availableOption = Array.from(targetMode.options)
+            .find(option => !option.hidden);
+
+        if (availableOption) {
+            targetMode.value = availableOption.value;
+        }
+    }
+}
+
+currentMode.addEventListener("change", updateTargetModes);
+
+// Loads immediately
+updateTargetModes();
+
 
 // =========================================================
 // NAVIGATION

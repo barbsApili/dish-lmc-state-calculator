@@ -9,28 +9,23 @@ DISH_MODE_GRAPH = {
     DishMode.UNKNOWN: [
         {
             "target": DishMode.STARTUP,
-            "condition": "Call STOW. No Power State Conditions."
-            "NB: Only possible when normal operation has been restored",
+            "condition": "Can and will transition to STARTUP when normal operation has been restored.",
         },
         {
             "target": DishMode.STOW,
-            "condition":"Call STOW. No Power State Conditions"
-            "NB: Only possible when normal operation has been restored",
+            "condition":"Can and will transition to STOW when normal operation has been restored.",
         },
         {
             "target": DishMode.CONFIG,
-            "condition": "Call STOW. No Power State Conditions"
-            "NB: Only possible when normal operation has been restored",
+            "condition": "Can and will transition to CONFIG when normal operation has been restored.",
         },   
         {
             "target": DishMode.STANDBY_LP,
-            "condition": "Call STOW. No Power State Conditions"
-            "NB: Only possible when normal operation has been restored",
+            "condition": "Can and will transition to STANDBY LP when normal operation has been restored.",
         },
         {
             "target": DishMode.STANDBY_FP,
-            "condition": "Call STOW. No Power State Conditions"
-            "NB: Only possible when normal operation has been restored",
+            "condition": "Can and will transition to STANDBY_FP when normal operation has been restored.",
         },
         {
             "target": DishMode.SHUTDOWN,
