@@ -1,7 +1,7 @@
 # This implementation was developed with reference to the SKAO Dish LMC
 # class, particularly its predefined state aggregation rules.
 # The calculator is an independent implementation for analysis and
-# simulation purposes 
+# simulation purposes (https://gitlab.com/ska-telescope/mid-dish/ska-mid-dish-manager/-/tree/main/src/ska_mid_dish_manager/models/transition_rules?ref_type=heads)
 
 """Automatic transition rules for configuredBand."""
 

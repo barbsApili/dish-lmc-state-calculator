@@ -7,7 +7,7 @@ const targetMode = document.getElementById("ds-select-mode");
 const modeButton = document.querySelector(".mode-btn");
 
 // =========================================================
-// BLOCK LIKE ELEMENTS IN DROPDOWN
+// BLOCK LIKE ELEMENTS IN DROPDOWN MENUS
 // =========================================================
 
 function updateTargetModes() {

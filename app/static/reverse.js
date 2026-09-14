@@ -144,7 +144,7 @@ function renderAdvice(response) {
             scenario.forEach((element, caseIndex) => {
 
                 result += `
-                    <b>Case ${caseIndex + 1}</b><br><br>
+                    <br><br><b>Case ${caseIndex + 1}</b><br><br>
                     ${element}<br><br>
                 `;
 
